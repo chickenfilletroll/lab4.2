@@ -2,7 +2,7 @@
 import socket, sys, time
 
 host = "scanme.nmap.org"
-port = 22  # try different ports
+port = 8080  # try different ports
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(3.0)  # 3 second timeout

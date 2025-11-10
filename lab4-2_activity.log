@@ -1,0 +1,26 @@
+ PHASE2 !
+
+- python lab4-2_probe.py scanme.nmap.org 22: port  open 
+- python lab4-2_probe.py scanme.nmap.org 9999 : port closed (refused)
+- python lab4-2_probe.py scanme.nmap.org 119 : port closed (refused)
+
+ PHASE3 !
+
+- workers 50 --timeout 3.0
+Scan complete in 2.92s — 2 open ports found
+
+- workers 30 --timeout 1.0
+Scan complete in 4.75s — 2 open ports found
+
+- workers 20 --timeout 5.0
+Scan complete in 7.11s — 2 open ports found
+
+- --workers 50 --timeout 0.05
+Scan complete in 1.08s — 0 open ports found
+
+THE LESS WORKERS, THE MORE SLOWER THE SCAN IS, THE LOWER THE TIMEOUT IS, THE LESS TIME 
+THHE SCAN HAS TO DO A THOROUGH SCAN
+
+open ports: 20, 80 
+
+
