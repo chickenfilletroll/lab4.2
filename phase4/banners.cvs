@@ -1,0 +1,4 @@
+# 2. Copy and paste this exact content:
+host,port,service_hint,banner_snippet
+scanme.nmap.org,20,UNKNOWN,"Connection successful but no banner"
+scanme.nmap.org,80,HTTP,"HTTP/1.1 200 OK Server: Apache/2.4.7 (Ubuntu)"  

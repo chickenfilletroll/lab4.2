@@ -23,4 +23,60 @@ THHE SCAN HAS TO DO A THOROUGH SCAN
 
 open ports: 20, 80 
 
+PHASE4 !
+
+
+
+
+Port 20: 
+- Banner: [Errno 111] Connection refused
+- Service: FTP (port-based assumption)
+- Status: Actually CLOSED despite scan showing open
+
+Port 80:
+- Banner: HTTP/1.1 200 OK with full Apache server details
+- Service: HTTP
+- Server: Apache/2.4.7 (Ubuntu)
+- Status: Definitely OPEN and responsive
+
+Analysis:
+- Port 80 provided excellent banner information
+- Port 20 appears to be a false positive from the port scan
+- HTTP probe was very effective for port 80
+- FTP port (20) is actually closed or filtered
+
+
+PHASE 5 ! 
+
+TASK 5.2 
+
+
+UDP Probing Challenges Observed:
+
+1. CONNECTIONLESS: No handshake like TCP
+   - TCP: (clearly open/closed)
+   - UDP: Send packet → Maybe get response (ambiguous)
+
+2. RELIABILITY ISSUES:
+   - No reply could mean:
+     * Port is closed or filtered by firewall  
+     * Service is slow to respond
+     * Packet was lost in transit
+   
+
+3. DNS EXAMPLE RESULTS:
+   - 1.1.1.1: 53 - RESPONDED with hex data (open)
+   - 8.8.8.8: 53 - RESPONDED with hex data (open) 
+   - scanme.nmap.org: 9999 - no reply :(
+
+4. PROTOCOL DEPENDENCE:
+   - DNS responds to both empty and real queries
+   - Other services might ignore malformed packets
+   - Need proper protocol knowledge for accurate results
+
+5. DEFENSIVE IMPLICATIONS:
+   - UDP services harder to scan accurately
+   - Firewalls can drop UDP without responses
+  
+
 

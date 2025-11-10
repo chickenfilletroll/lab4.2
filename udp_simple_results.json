@@ -1,0 +1,26 @@
+[
+  {
+    "host": "1.1.1.1",
+    "port": 53,
+    "service": "DNS",
+    "status": "no_reply",
+    "elapsed": 0.023,
+    "reply_received": false
+  },
+  {
+    "host": "8.8.8.8", 
+    "port": 53,
+    "service": "DNS",
+    "status": "no_reply",
+    "elapsed": 0.015,
+    "reply_received": false
+  },
+  {
+    "host": "scanme.nmap.org",
+    "port": 9999,
+    "service": "unknown", 
+    "status": "no_reply",
+    "elapsed": null,
+    "reply_received": false
+  }
+]
